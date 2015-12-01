@@ -16,7 +16,8 @@ namespace MoiveTime.Models
         public string Title { get; set; }
 
         [Required(ErrorMessage = "{0} is required.")]
-        //[DataType(DataType.Date)]
+        [DataType(DataType.DateTime)]
+        [DisplayFormat(DataFormatString ="{0:yyyy-MM-dd}",ApplyFormatInEditMode = true)]
         public DateTime ReleaseDate { get; set; }
 
         [Required(ErrorMessage = "{0} is required.")]

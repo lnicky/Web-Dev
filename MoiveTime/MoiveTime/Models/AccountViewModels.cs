@@ -5,7 +5,7 @@ namespace MoiveTime.Models
 {
     public class ExternalLoginConfirmationViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "{0} is required.")]
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
@@ -25,10 +25,10 @@ namespace MoiveTime.Models
 
     public class VerifyCodeViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "{0} is required.")]
         public string Provider { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "{0} is required.")]
         [Display(Name = "Code")]
         public string Code { get; set; }
         public string ReturnUrl { get; set; }
@@ -41,19 +41,19 @@ namespace MoiveTime.Models
 
     public class ForgotViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "{0} is required.")]
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
 
     public class LoginViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "{0} is required.")]
         [Display(Name = "Email")]
         [EmailAddress]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "{0} is required.")]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
@@ -64,12 +64,12 @@ namespace MoiveTime.Models
 
     public class RegisterViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "{0} is required.")]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "{0} is required.")]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
@@ -83,12 +83,12 @@ namespace MoiveTime.Models
 
     public class ResetPasswordViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "{0} is required.")]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "{0} is required.")]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
@@ -104,7 +104,7 @@ namespace MoiveTime.Models
 
     public class ForgotPasswordViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "{0} is required.")]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }

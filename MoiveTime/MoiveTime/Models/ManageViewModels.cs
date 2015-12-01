@@ -27,7 +27,7 @@ namespace MoiveTime.Models
 
     public class SetPasswordViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "{0} is required.")]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "New password")]
@@ -41,12 +41,12 @@ namespace MoiveTime.Models
 
     public class ChangePasswordViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "{0} is required.")]
         [DataType(DataType.Password)]
         [Display(Name = "Current password")]
         public string OldPassword { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "{0} is required.")]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "New password")]
@@ -60,7 +60,7 @@ namespace MoiveTime.Models
 
     public class AddPhoneNumberViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "{0} is required.")]
         [Phone]
         [Display(Name = "Phone Number")]
         public string Number { get; set; }
@@ -68,11 +68,11 @@ namespace MoiveTime.Models
 
     public class VerifyPhoneNumberViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "{0} is required.")]
         [Display(Name = "Code")]
         public string Code { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "{0} is required.")]
         [Phone]
         [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
